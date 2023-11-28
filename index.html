@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis Peliculas</title>
+    <script>
+      fetch("http://localhost:3000/movies")
+        .then((response) => response.json())
+        .then((data) => {
+          const html = data
+            .map((movie) => {
+              return `
+                    <div>
+                        <h1>${movie.title}</h1>
+                    </div>
+                `;
+            })
+            .join(" ");
+
+          document.getElementById("main").innerHTML = html;
+        });
+    </script>
+  </head>
+  <body>
+    <div id="main"></div>
+  </body>
+</html>

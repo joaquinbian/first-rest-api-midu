@@ -1,0 +1,42 @@
+GET http://localhost:3000
+
+### Recuperar Peliculas
+GET http://localhost:3000/movies
+
+
+###Recuperar Pelicula
+GET http://localhost:3000/movies/2
+
+### Recuperar peliculas por genero
+GET http://localhost:3000/movies/genre/
+
+### Buscar pelicula por titulo
+GET http://localhost:3000/movies?title=The Godfather
+
+
+### Crear Pelicula
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+    "title": "Matrix",
+    "rating": 8.7,
+    "year": 1999,
+    "genre": ["Sci-Fi"],
+    "director": "Lana Wachowski",
+    "actors": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"]
+    
+        
+}
+
+
+### Actualizar Pelicula
+
+PATCH  http://localhost:3000/movies/2
+Content-Type: application/json
+
+{
+    "title": "El Padrinro",
+    "id":"2"
+    
+}
